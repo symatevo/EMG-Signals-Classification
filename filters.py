@@ -16,20 +16,22 @@ signals = data[:, 1:]
 fs = 1 / (t[1] - t[0])
 
 # Design the Bandpass filter
-b1, a1 = signal.butter(4, 10/(fs/2), 'highpass')
-b2, a2 = signal.butter(4, [15, 35], 'bandpass', fs=fs)
+b1, a1 = signal.butter(4, 10/(fs/2), 'highpass') #butterworth
+b2, a2 = signal.butter(4, [15, 35], 'bandpass', fs=fs) #bandpass
 
-# Apply the Bandpass filter to each signal
+# Apply the filters to each signal
 filtered_signals = np.zeros_like(signals)
 for i in range(signals.shape[1]):
-    filtered_signals[:, i] = signal.filtfilt(b1, a1, signals[:, i])
-    filtered_signals[:, i] = signal.lfilter(b2, a2, filtered_signals[:, i])
+    filtered_signals[:, i] = signal.filtfilt(b1, a1, signals[:, i]) #butterworth
+    filtered_signals[:, i] = signal.lfilter(b2, a2, filtered_signals[:, i]) #bandpass
+    filtered_signals[:, i] = np.abs(filtered_signals[:, i])
+    data_min = min(filtered_signals[:,i])
+    data_max = max(filtered_signals[:, i])
+    filtered_signals[:, i] = (filtered_signals[:, i] - data_min)/(data_max - data_min)
 
-#print("hesa")
-#print(filtered_signals)
 # Plot the original and filtered signals
 plt.figure()
-plt.plot(t, signals, color = 'b')
+#plt.plot(t, signals, color = 'b')
 plt.plot(t, filtered_signals, color = 'g')
 plt.xlabel('Time [s]')
 plt.ylabel('Amplitude [mV]')
