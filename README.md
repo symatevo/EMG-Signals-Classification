@@ -8,7 +8,6 @@ This repository contains Python scripts for processing and filtering EMG (Electr
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [File Descriptions](#file-descriptions)
-- [License](#license)
 
 ## Introduction
 
