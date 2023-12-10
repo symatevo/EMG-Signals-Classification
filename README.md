@@ -39,7 +39,8 @@ Three traditional machine learning and one deep learning models were used to cla
 
 ### Results
 
-Even though deep learning architecures are particularly beneficial, the inference time is longer and the accuracy for some patients is lower than traditional models. In contrast, traditional ML algorithms are faster and ready to use for real-time feedback. 
+Even though deep learning architecures are particularly beneficial, the inference time is longer and the accuracy for some patients is lower than traditional models. In contrast, traditional ML algorithms are faster and ready to use for real-time feedback. Models performence for test patient shown as
+![image](https://github.com/symatevo/EMG-Signal-Classification/assets/74954267/58c47c7f-5351-4344-8ae4-222baf33bfab)
 
 
 
