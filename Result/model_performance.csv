@@ -1,0 +1,7 @@
+Model,Accuracy (%),Inference Time (s)
+DT,87.8,0.000736
+RF,97.56,0.033834
+SVM_rbf,82.31,0.001896
+SVM_lin,92.68,0.001056
+SVM_poly,72.25,0.001542
+RNN,91.05,0.140401
