@@ -21,9 +21,11 @@ EMG sensors attached to the residual limb of an amputee detect electrical signal
 
 ### EMG Data Acquisition
 
-We had collected data from 20 healthy patients under 50 years old. Each participant was asked to perform three distinct movements: five finger flexion, simultaneous flexion of the index and thumb, and simultaneous flexion of the index, middle fingers and thumb. Each movement was repeated 30 times, and the resting time between repetitions was estimated to be around 1-2 seconds. You can find first patient's data as test in the Data folder.
+We had collected data from 20 healthy patients under 50 years old. Each participant was asked to perform three distinct movements: five finger flexion, simultaneous flexion of the index and thumb, and simultaneous flexion of the index, middle fingers and thumb. Each movement was repeated 30 times, and the resting time between repetitions was estimated to be around 1-2 seconds. You can find test patient data in the `Data/csv/AH` folder.
 
 ### Preprocessing
+
+Preprocessing was performed in the `Src/Preprocessing` folder.
 
 The raw EMG data was first checked for missing and duplicate values. Duplicate columns were removed. Afterwards, data was filtered through a band-pass fourth order filter (15–450 Hz) to reduce noise. We took 1000 as sampling frequency since the maximum frequency in our data was greater than 500 Hz, and conventionally, the sampling frequency should be twice the maximum frequency in the data. Afterwards, we did full rectification of data to transform the negative values into positive ones, since we are not interested in the direction of the signal, only in magnitude. Then normalization was done to scale the data.
 Example of preprocessed EMG data from 8 channels of five finger flexion by the “AH” subject in this study.One channel was removed as it contained duplicate information.
@@ -31,17 +33,28 @@ Example of preprocessed EMG data from 8 channels of five finger flexion by the �
 
 ### Feature Extraction
 
+Feature Extraction was performed in the `Src/Feature_extraction` folder.
+
 Time and frequency features were extracted from the filtered EMG signals with Discrete Wavelet Transform (DWT). Symlet 4 is a symmetrical wavelet that provides the most meaningful and relevant decomposition of the signal used in this study. The choice of this wavelet was supported by the fact that among tests conducted with other wavelets, Symlet 4 demonstrated the best results. The number of decomposition levels determines the scale of detail captured in the analysis. More levels provide finer detail, while fewer levels may oversimplify the representation. After conducting several tests with various numbers of decomposition levels, we determined that employing ten levels provides an optimal balance between capturing sufficient detail and avoiding noise in the analysis of sEMG signals.
 
 ### Machine Learning Models
+
+Models were performed in the `Src/Classification/` folder.
 
 Three traditional machine learning and one deep learning models were used to classify the EMG signals: Support Vector Machine (SVM), Random Forest, Decision Tree and RNN.
 
 ### Results
 
+You can find results in the `Results` folder and the visualization of the results in the `Visualization` folder.
 Even though deep learning architecures are particularly beneficial, the inference time is longer and the accuracy for some patients is lower than traditional models. In contrast, traditional ML algorithms are faster and ready to use for real-time feedback. Models performence for test patient shown as
 ![image](https://github.com/symatevo/EMG-Signal-Classification/assets/74954267/58c47c7f-5351-4344-8ae4-222baf33bfab)
+Models with accuracies above 90% (RF, SVM_lin, and RNN) are highlighted in green, indicating their superior performance in this aspect. The Random Forest (RF) model stands out with the highest accuracy, highlighted with a gold edge.
+The line graph with markers shows the inference time for each model. A lower value on this graph means faster inference time. The RNN model is highlighted with a magenta marker, indicating that it has the longest inference time among the models compared.
 
+### Conclusion
+The Random Forest model, while being the most accurate, does not have the longest inference time, suggesting a good balance between accuracy and speed.
+Conversely, the RNN, despite its high accuracy, might be less preferable in scenarios where inference time is a critical factor due to its longer processing time.
+Models like Decision Tree (DT) and SVM with polynomial kernel (SVM_poly) show lower accuracies compared to others, which might make them less desirable choices for tasks requiring high precision.
 
 
 
