@@ -39,7 +39,7 @@ Three traditional machine learning and one deep learning models were used to cla
 
 ### Results
 
-Enev though deep learning architecures are particularly beneficial, the inference time is longer and the accuracy for some patients is lower than traditional models. In contrast, traditional ML algorithms are faster and ready to use for real-time feedback. 
+Even though deep learning architecures are particularly beneficial, the inference time is longer and the accuracy for some patients is lower than traditional models. In contrast, traditional ML algorithms are faster and ready to use for real-time feedback. 
 
 
 
