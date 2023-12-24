@@ -1,6 +1,6 @@
 <h1 align="left">EMG Signal Classification</h1>
 
-Performing and evaluating different machine learning algrotihms for EMG Signal Classification to identify the most effective one.
+Performing and evaluating different machine learning algrotihms for EMG Signal Classification to identify the most effective one. (TEST VERSION)
 
 ### &nbsp; Team
 
