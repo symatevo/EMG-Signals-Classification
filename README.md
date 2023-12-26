@@ -57,6 +57,8 @@ Conversely, the RNN, despite its high accuracy, might be less preferable in scen
 Models like Decision Tree (DT) and SVM with polynomial kernel (SVM_poly) show lower accuracies compared to others, which might make them less desirable choices for tasks requiring high precision.
 Additionaly, training and testing the model on diferrent patients show low accuracy and poor performence, which highlights the need to develop prosthesis using individual and personalized approach.
 
+[Article]
+
 
 
 
