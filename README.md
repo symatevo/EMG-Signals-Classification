@@ -59,7 +59,7 @@ Additionaly, training and testing the model on diferrent patients show low accur
 
 [Article]
 
-In case any question feel free to contact - (syuzi.matevosyan1802@gmail.com)
+In case of any question feel free to contact - (syuzi.matevosyan1802@gmail.com)
 
 
 
