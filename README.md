@@ -52,7 +52,7 @@ Models with accuracies above 90% (RF, SVM_lin, and RNN) are highlighted in green
 The line graph with markers shows the inference time for each model. A lower value on this graph means faster inference time. The RNN model is highlighted with a magenta marker, indicating that it has the longest inference time among the models compared.
 
 ### Conclusion
-The Random Forest model, while being the most accurate, does not have the longest inference time, suggesting a good balance between accuracy and speed.
+Some metrics of Computational cost were compared. The Random Forest model, while being the most accurate, does not have the longest inference time, suggesting a good balance between accuracy and speed.
 Conversely, the RNN, despite its high accuracy, might be less preferable in scenarios where inference time is a critical factor due to its longer processing time.
 Models like Decision Tree (DT) and SVM with polynomial kernel (SVM_poly) show lower accuracies compared to others, which might make them less desirable choices for tasks requiring high precision.
 Additionaly, training and testing the model on diferrent patients show low accuracy and poor performence, which highlights the need to develop prosthesis using individual and personalized approach.
